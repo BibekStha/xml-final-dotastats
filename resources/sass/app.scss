@@ -1,0 +1,94 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+// General syling
+body {
+  font-family: Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+}
+// End of general styling
+
+// Master page styling
+#sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #263238;
+  padding: 10px;
+}
+
+#user_container {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #222d32;
+}
+
+#user_container img {
+  height: auto;
+  width: 80px;
+  margin:  10px 0 25px;
+}
+
+.main_container {
+  background-color: #292a3d;
+  background: linear-gradient(to bottom left, #017a7a 0%, #263238 95%);
+  background-repeat: no-repeat;
+  color: white;
+}
+
+nav {
+  font-size: 1.3em;
+  font-weight: 500;
+  text-align: right;
+}
+
+
+// End of general master page styling
+
+
+// Home Page styling
+#home_container {
+  height: 100vh;
+}
+
+#home_search_form .search-query {
+  border: none;
+  background-color: #263238;
+  padding: 10px;
+  border-radius: 3px 0 0 3px;
+  color: white;
+}
+
+#home_search_form .search_btn {
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+
+#home_search_form .search_btn img {
+  padding: 5px;
+  height: 30px;
+  width: auto;
+}
+
+// End of Home page styling
