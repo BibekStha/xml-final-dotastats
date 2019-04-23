@@ -1,7 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700');
 
 // Variables
 @import 'variables';
@@ -27,11 +27,33 @@ h4,
 h5,
 h6 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 800;
+  font-weight: 600;
 }
+
+a, a:visited, a:focus {
+  color: #1a8787;
+}
+
+a:hover {
+  color: #006161;
+  text-decoration: none;
+}
+
 // End of general styling
 
 // Master page styling
+#site_title {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 8px;
+  color: #263238;
+}
+
 #sidebar {
   width: 300px;
   height: 100vh;
@@ -52,9 +74,9 @@ h6 {
 
 .main_container {
   background-color: #292a3d;
-  background: linear-gradient(to bottom left, #017a7a 0%, #263238 95%);
+  background: linear-gradient(to bottom left, #339494 0%, #263238 95%);
   background-repeat: no-repeat;
-  color: white;
+  color: #cccccc;
 }
 
 nav {
@@ -70,6 +92,15 @@ nav {
 // Home Page styling
 #home_container {
   height: 100vh;
+}
+
+#home_container h1 {
+  font-size: 2.5rem;
+}
+
+#home_container .dota_text {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 #home_search_form .search-query {

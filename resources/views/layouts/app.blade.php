@@ -24,6 +24,7 @@
   </div>
 
   <div class="container main_container flex-grow-1">
+    <div id="site_title">Dotastats</div>
     @yield('content')
   </div>
 
