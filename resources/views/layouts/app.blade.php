@@ -12,7 +12,7 @@
     @section('sidebar')
         <div id="user_container" class="d-flex flex-column align-items-center">
           <img src="/images/smiley-face.png" alt="" srcset="">
-          <a href="#">Sign in using Steam</a>
+          <a href="/login/steam">Sign in using Steam</a>
         </div>
         <nav class="nav flex-column">
           <a class="nav-link active" href="/">Home</a>

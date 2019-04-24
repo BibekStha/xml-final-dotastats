@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('login/steam', 
+    'Auth\SteamLoginController@login')->name('login.steam');
+Route::get('auth/steam', 
+    'Auth\SteamLoginController@authenticate')->name('auth.steam'); // callback route when returning from steam
