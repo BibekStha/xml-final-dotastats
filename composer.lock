@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6b006d503f965e6265175aa71bb3093",
+    "content-hash": "87f3ebc58b812fe120e6ef5f8ce2b85c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -706,16 +706,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.13",
+            "version": "v5.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "837e3823e2274d22b8e281d093391b5d9c23029a"
+                "reference": "d1ba096bf809c7cbe6cb9624222326d75c92fd74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/837e3823e2274d22b8e281d093391b5d9c23029a",
-                "reference": "837e3823e2274d22b8e281d093391b5d9c23029a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d1ba096bf809c7cbe6cb9624222326d75c92fd74",
+                "reference": "d1ba096bf809c7cbe6cb9624222326d75c92fd74",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +849,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-04-18T15:28:45+00:00"
+            "time": "2019-04-23T13:22:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -997,38 +997,6 @@
                 "storage"
             ],
             "time": "2019-03-30T13:22:34+00:00"
-        },
-        {
-            "name": "leamare/simple-opendota-php",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leamare/simple-opendota-php.git",
-                "reference": "c8e429b62c52df82485c9500bf7aca1843978815"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leamare/simple-opendota-php/zipball/c8e429b62c52df82485c9500bf7aca1843978815",
-                "reference": "c8e429b62c52df82485c9500bf7aca1843978815",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "^7.2",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Ilia Silakov",
-                    "email": "me@ileamare.ru"
-                }
-            ],
-            "description": "Simple class interface to work with OpenDota API",
-            "time": "2019-04-14T20:38:27+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4809,9 +4777,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "leamare/simple-opendota-php": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

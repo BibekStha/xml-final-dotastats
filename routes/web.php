@@ -19,3 +19,6 @@ Route::get('login/steam',
     'Auth\SteamLoginController@login')->name('login.steam');
 Route::get('auth/steam', 
     'Auth\SteamLoginController@authenticate')->name('auth.steam'); // callback route when returning from steam
+
+Route::resource('teams', 'TeamController');
+Route::resource('heroes', 'HeroController');

@@ -10692,23 +10692,40 @@ a:hover {
   text-decoration: none;
 }
 
+.pagination {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.pagination .page-item .page-link {
+  background-color: #263238;
+  color: white;
+  border-color: #263238;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3b464b;
+}
+
 #site_title {
-  position: absolute;
-  top: 10px;
-  right: 20px;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 8px;
   color: #263238;
+  text-align: right;
+  padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
 #sidebar {
-  width: 300px;
+  width: 250px;
   height: 100vh;
   background-color: #263238;
   padding: 10px;
+  position: fixed;
 }
 
 #user_container {
@@ -10727,6 +10744,8 @@ a:hover {
   background: linear-gradient(to bottom left, #339494 0%, #263238 95%);
   background-repeat: no-repeat;
   color: #cccccc;
+  margin-left: 250px;
+  overflow: auto;
 }
 
 nav {
@@ -10735,8 +10754,16 @@ nav {
   text-align: right;
 }
 
+.page_heading {
+  text-transform: uppercase;
+  color: #263238;
+  font-weight: 300;
+  font-size: 4.3em;
+  margin-bottom: 40px;
+}
+
 #home_container {
-  height: 100vh;
+  height: calc(100vh - 84px);
 }
 
 #home_container h1 {
@@ -10765,5 +10792,46 @@ nav {
   padding: 5px;
   height: 30px;
   width: auto;
+}
+
+.team_container {
+  margin: 10px 5px;
+  padding: 10px 5px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: #263238;
+  font-size: 1.3em;
+}
+
+.team_container .team_logo {
+  height: 100%;
+  width: auto;
+}
+
+.team_name {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.team_sub_heading {
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+#heroes_container .col-2 {
+  max-width: 11.1111% !important;
+}
+
+.hero_img {
+  width: inherit;
+  height: auto;
+}
+
+.hero_attr_heading {
+  color: #263238;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.4em;
 }
 

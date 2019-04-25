@@ -13,7 +13,6 @@
         "kanalumaddela/laravel-steam-login": "2.*",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "leamare/simple-opendota-php": "dev-master",
         "xpaw/steamid": "^1.0"
     },
     "require-dev": {
@@ -40,7 +39,8 @@
         },
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/SimpleOpenDota"
         ]
     },
     "autoload-dev": {
