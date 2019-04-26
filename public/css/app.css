@@ -10709,6 +10709,9 @@ a:hover {
 }
 
 #site_title {
+  position: absolute;
+  top: 10px;
+  right: 20px;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 40px;
@@ -10717,7 +10720,6 @@ a:hover {
   color: #263238;
   text-align: right;
   padding: 10px 20px;
-  margin-bottom: 20px;
 }
 
 #sidebar {
@@ -10746,6 +10748,8 @@ a:hover {
   color: #cccccc;
   margin-left: 250px;
   overflow: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 nav {
@@ -10762,8 +10766,29 @@ nav {
   margin-bottom: 40px;
 }
 
+.user_avatar {
+  border-radius: 50%;
+}
+
+#logout_btn,
+#logout_btn:focus {
+  background: none !important;
+  color: #1a8787;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+#logout_btn:hover {
+  color: #006161;
+}
+
 #home_container {
-  height: calc(100vh - 84px);
+  height: 100vh;
+  margin-top: -100px;
+  margin-bottom: -50px;
 }
 
 #home_container h1 {

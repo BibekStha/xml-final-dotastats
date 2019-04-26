@@ -22,3 +22,6 @@ Route::get('auth/steam',
 
 Route::resource('teams', 'TeamController');
 Route::resource('heroes', 'HeroController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

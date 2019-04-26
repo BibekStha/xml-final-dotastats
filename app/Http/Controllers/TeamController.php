@@ -29,6 +29,29 @@ class TeamController extends Controller
     public function create()
     {
         //
+        $od = new odota_api();
+      $teams = $od->teams();
+      $num=0;
+      foreach($teams as $team) {
+        $t = Team::where('team_id', $team['team_id'])->first();
+
+        if($t){
+          $num++;
+          echo($num);
+
+        } else {
+          $t = Team::create([
+            'team_id' => $team['team_id'],
+            'rating' => $team['rating'],
+            'wins' => $team['wins'],
+            'losses' => $team['losses'],
+            'last_match_time' => Date("Y-m-d H:i", $team['last_match_time']),
+            'name' => $team['name'],
+            'tag' => $team['tag'],
+            'logo_url' => $team['logo_url']
+          ]);
+        }
+      }
     }
 
     /**
