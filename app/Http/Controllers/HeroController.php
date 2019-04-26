@@ -36,6 +36,7 @@ class HeroController extends Controller
     public function create()
     {
         //
+        return view('heroes.store');
     }
 
     /**
