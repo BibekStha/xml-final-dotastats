@@ -177,7 +177,7 @@ nav {
 
 // Team page styling
 .team_container {
-  margin: 10px 5px;
+  margin: 10px 0;
   padding: 10px 5px;
   height: 120px;
   background-color: rgba(255,255,255,0.2);
@@ -221,3 +221,36 @@ nav {
 }
 
 // End of Hero page styling
+
+// ProPlayer page styling
+.proplayer_container {
+  margin: 10px 0;
+  padding: 10px 5px;
+  height: 120px;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  color: #263238;
+  font-size: 1.3em;
+}
+
+.proplayer_container .proplayer_logo {
+  height: 100%;
+  width: auto;
+}
+
+.proplayer_name {
+  font-size: .8em;
+  font-weight: 300;
+}
+
+.proplayer_team_name {
+  font-weight: 500;
+  font-size: .5em;
+}
+
+.proplayer_sub_heading {
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+// End of ProPlayer page styling

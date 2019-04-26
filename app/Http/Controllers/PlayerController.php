@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SimpleOpenDota\odota_api;
-use App\Team;
+use App\ProPlayer;
+use App\Player;
 
-class TeamController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-      //
-      $teams = Team::orderBy('rating', 'desc')->paginate(10);
-
-      return view('teams.index', ['teams' => $teams]);
+        //
+      
     }
 
     /**
@@ -29,7 +28,7 @@ class TeamController extends Controller
     public function create()
     {
         //
-      return view('teams.create');
+        return view('players.create');
     }
 
     /**
@@ -42,21 +41,35 @@ class TeamController extends Controller
     {
         //
       $od = new odota_api();
-      $teams = $od->teams();
-      
-      foreach($teams as $team) {
-        $t = Team::where('team_id', $team['team_id'])->first();
 
-        if(!$t){
-          $t = Team::create([
-            'team_id' => $team['team_id'],
-            'rating' => $team['rating'],
-            'wins' => $team['wins'],
-            'losses' => $team['losses'],
-            'last_match_time' => Date("Y-m-d H:i", $team['last_match_time']),
-            'name' => $team['name'],
-            'tag' => $team['tag'],
-            'logo_url' => $team['logo_url']
+      $proPlayers = ProPlayer::all();
+
+      foreach($proPlayers as $proPlayer){
+        
+        $p = Player::where('account_id', $proPlayer->account_id)->first();
+
+        if(!$p){
+          $player = $od->player($proPlayer->account_id);
+          $p = Player::create([
+          'tracked_until' => $player['tracked_until'],
+          'solo_competitive_rank' => $player['solo_competitive_rank'],
+          'account_id' => $player['profile']['account_id'],
+          'personaname' => $player['profile']['personaname'],
+          'name' => $player['profile']['name'],
+          'plus' => $player['profile']['plus'],
+          'cheese' => $player['profile']['cheese'],
+          'steamid' => $player['profile']['steamid'],
+          'avatar' => $player['profile']['avatar'],
+          'avatarmedium' => $player['profile']['avatarmedium'],
+          'avatarfull' => $player['profile']['avatarfull'],
+          'profileurl' => $player['profile']['profileurl'],
+          'last_login' => $player['profile']['last_login'],
+          'loccountrycode' => $player['profile']['loccountrycode'],
+          'is_contributor' => $player['profile']['is_contributor'],
+          'mmr_estimate' => $player['mmr_estimate']['estimate'],
+          'rank_tier' => $player['rank_tier'],
+          'leaderboard_rank' => $player['leaderboard_rank'],
+          'competitive_rank' => $player['competitive_rank']
           ]);
         }
       }

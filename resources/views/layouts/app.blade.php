@@ -28,7 +28,7 @@
           <a class="nav-link active" href="/">Home</a>
           <a class="nav-link" href="/heroes">Heroes</a>
           <a class="nav-link" href="/teams">Teams</a>
-          <a class="nav-link" href="/tournaments">Tournaments</a>
+          <a class="nav-link" href="/proplayers">Pro Players</a>
         </nav>
     @show
   </div>
