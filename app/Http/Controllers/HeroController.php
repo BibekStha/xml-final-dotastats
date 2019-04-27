@@ -16,8 +16,6 @@ class HeroController extends Controller
     public function index()
     {
         //
-      
-
       $s_heroes = Hero::where('primary_attr', 'str')->get();
       $a_heroes = Hero::where('primary_attr', 'agi')->get();
       $i_heroes = Hero::where('primary_attr', 'int')->get();

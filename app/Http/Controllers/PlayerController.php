@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\SimpleOpenDota\odota_api;
 use App\ProPlayer;
 use App\Player;
+use App\Hero;
 
 class PlayerController extends Controller
 {
@@ -81,9 +82,29 @@ class PlayerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($account_id)
     {
-        //
+      $od = new odota_api();
+      $player = $od->player($account_id);
+      $proplayer = ProPlayer::where('account_id', $account_id)->first();
+      $winloss = $od->player_winloss($account_id);
+
+      $heroes = $od->player_heroes($account_id);
+      $player_heroes = [];
+      foreach($heroes as $hero) {
+        if($hero['games']){
+          $player_heroes[] = $hero['hero_id'];
+        }
+      }
+      sort($player_heroes);
+
+      $player_heroes = Hero::find($player_heroes);
+
+      return view('players.show')
+        ->with('player', $player)
+        ->with('winloss', $winloss)
+        ->with('player_heroes', $player_heroes)
+        ->with('proplayer', $proplayer);
     }
 
     /**

@@ -1,22 +1,21 @@
 @extends('layouts.app')
 
-@section('page_title', 'Pro Players')
+@section('page_title', $team->name)
 
 
 @section('content')
 
 <div id="proplayers_container" class="d-flex flex-column justify-content-center">
-  <h1 class="text-center page_heading">Pro Players</h1>
-  {{ $pp->links( )}}
+  <h1 class="text-center page_heading">{{ $team->name }}</h1>
   
-  @foreach ($pp as $player)
+  @foreach ($players as $player)
   
     <div class="container proplayer_container d-flex flex-row">
       <div class="col-2 text-center">
         <img src="{{ $player->avatarfull }}" alt="" srcset="" class="proplayer_logo rounded-circle">
       </div>
       <div class="col-10 d-flex flex-row align-items-center">
-        <div class="col-6 proplayer_name_container d-flex flex-column justify-content-around">
+        <div class="col-6 team_player_container d-flex flex-column">
           <a class="text-center" href="/players/{{ $player->account_id }}">
             <span class="proplayer_name">{{ $player->personaname }}</span>
           </a>
@@ -44,7 +43,7 @@
     </div>
 
   @endforeach
-  {{ $pp->links( )}}
+  
 </div>
 
 @endsection

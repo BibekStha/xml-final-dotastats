@@ -10766,6 +10766,13 @@ nav {
   margin-bottom: 40px;
 }
 
+.page_subheading {
+  display: block;
+  font-weight: 200;
+  font-size: 0.5em;
+  text-transform: none;
+}
+
 .user_avatar {
   border-radius: 50%;
 }
@@ -10837,6 +10844,15 @@ nav {
 .team_name {
   font-size: 2em;
   font-weight: 300;
+  color: #125e5e;
+}
+
+.team_player_container {
+  font-size: 2em;
+}
+
+.team_name:hover {
+  color: #263238;
 }
 
 .team_sub_heading {
@@ -10846,6 +10862,9 @@ nav {
 
 #heroes_container .col-2 {
   max-width: 11.1111% !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
 }
 
 .hero_img {
@@ -10875,9 +10894,18 @@ nav {
   width: auto;
 }
 
+.proplayer_name_container {
+  font-size: 2em;
+}
+
 .proplayer_name {
   font-size: 0.8em;
   font-weight: 300;
+  color: #125e5e;
+}
+
+.proplayer_name:hover {
+  color: #263238;
 }
 
 .proplayer_team_name {
@@ -10888,5 +10916,32 @@ nav {
 .proplayer_sub_heading {
   font-weight: 500;
   padding-bottom: 20px;
+}
+
+#profile_container {
+  color: #263238;
+  font-size: 1.5em;
+}
+
+.profile_name_container {
+  font-weight: 300;
+  margin-bottom: 50px;
+  font-size: 2em;
+}
+
+.profile_team_name {
+  font-size: 0.8em;
+}
+
+.profile_subheading {
+  font-weight: 500;
+  color: lightgrey;
+}
+
+.player_heroes_container .col-2 {
+  max-width: 11.1111% !important;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
 }
 

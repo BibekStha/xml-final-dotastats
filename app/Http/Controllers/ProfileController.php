@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\SimpleOpenDota\odota_api;
-use App\Team;
-use App\ProPlayer;
+use App\Player;
+use App\Hero;
 
-class TeamController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,33 @@ class TeamController extends Controller
      */
     public function index()
     {
-      //
-      $teams = Team::orderBy('rating', 'desc')->paginate(10);
+        //
+        $account_id = Auth::user()->accountId;
 
-      return view('teams.index', ['teams' => $teams]);
+        $od = new odota_api();
+        $player = $od->player($account_id);
+
+        $winloss = $od->player_winloss($account_id);
+
+        $heroes = $od->player_heroes($account_id);
+        $player_heroes = [];
+        foreach($heroes as $hero) {
+          if($hero['games']){
+            $player_heroes[] = $hero['hero_id'];
+          }
+        }
+        sort($player_heroes);
+
+        $player_heroes = Hero::find($player_heroes);
+        // $trial = $od->player_recent_matches($account_id);
+
+        // var_dump($player);
+        // exit();
+
+        return view('profile.index')
+          ->with('player', $player)
+          ->with('winloss', $winloss)
+          ->with('player_heroes', $player_heroes);
     }
 
     /**
@@ -30,7 +54,6 @@ class TeamController extends Controller
     public function create()
     {
         //
-      return view('teams.create');
     }
 
     /**
@@ -42,25 +65,6 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         //
-      $od = new odota_api();
-      $teams = $od->teams();
-      
-      foreach($teams as $team) {
-        $t = Team::where('team_id', $team['team_id'])->first();
-
-        if(!$t){
-          $t = Team::create([
-            'team_id' => $team['team_id'],
-            'rating' => $team['rating'],
-            'wins' => $team['wins'],
-            'losses' => $team['losses'],
-            'last_match_time' => Date("Y-m-d H:i", $team['last_match_time']),
-            'name' => $team['name'],
-            'tag' => $team['tag'],
-            'logo_url' => $team['logo_url']
-          ]);
-        }
-      }
     }
 
     /**
@@ -72,10 +76,6 @@ class TeamController extends Controller
     public function show($id)
     {
         //
-      $team = Team::where('team_id', $id)->first();
-      $players = $team->proplayers;
-      
-      return view('teams.show', ['team' => $team], ['players' => $players]);
     }
 
     /**

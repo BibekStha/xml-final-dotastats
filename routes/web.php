@@ -24,6 +24,8 @@ Route::resource('teams', 'TeamController');
 Route::resource('heroes', 'HeroController');
 Route::resource('proplayers', 'ProPlayerController');
 Route::resource('players', 'PlayerController');
+Route::resource('myprofile', 'ProfileController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

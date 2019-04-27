@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('page_title') - DotaStats</title>
   <link rel="stylesheet" href="\css\app.css">
+  <link rel="icon" href="\images\favicon.ico">
 </head>
 <body class="d-flex flex-row">
   <div class="d-flex flex-column" id="sidebar">
     @section('sidebar')
         <div id="user_container" class="d-flex flex-column align-items-center">
           @if(Auth::check())
-          {{-- {{ Auth::user()->avatarLarge }} --}}
           <img class="rounded-circle" src="{{ Auth::user()->avatarLarge }}" alt="" srcset="">
           <a href="/myprofile">My Dota Profile</a>
           <form method="POST" action="{{ route('logout') }}">

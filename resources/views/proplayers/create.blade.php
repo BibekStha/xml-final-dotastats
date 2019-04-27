@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_title', 'Home')
+@section('page_title', 'Update Pro Players')
 
 
 @section('content')
